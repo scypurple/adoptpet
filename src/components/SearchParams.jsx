@@ -16,7 +16,6 @@ const SearchParams = () => {
   const [breeds] = useBreedList(animal);
   const results = useQuery(["search", requestParams], fetchSearch);
   const pets = results?.data?.pets ?? [];
-  console.log(pets);
   return (
     <div className="search-params">
       <form
