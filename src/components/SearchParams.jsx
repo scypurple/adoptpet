@@ -13,13 +13,11 @@ const SearchParams = () => {
     breed: "",
   });
   const [animal, setAnimal] = useState("");
-  // const [pets, setPets] = useState([]);
   const [breeds] = useBreedList(animal);
   const [adoptPet] = useContext(AdoptPetContext);
 
   const results = useQuery(["search", requestParams], fetchSearch);
   const pets = results?.data?.pets ?? [];
-
   return (
     <div className="search-params">
       <form
